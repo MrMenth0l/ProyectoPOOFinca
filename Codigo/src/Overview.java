@@ -82,7 +82,8 @@ public class Overview extends JFrame {
         finanzas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                GenerarER generarER = new GenerarER(sistema, csv, finca);
+                generarER.setVisible(true);
             }
         });
     }
