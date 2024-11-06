@@ -160,7 +160,7 @@ public class AgregarCosecha extends JFrame {
                 }
                 JOptionPane.showMessageDialog(AgregarCosecha.this, "Cosecha: " + cosecha.getTipo() + "\nAgregada correctamente");
                 dispose();
-                //new SetupFinca(sistema,finca, csv);
+                new SetupFinca(sistema,finca, csv);
             }
         });
         this.Regresar.addActionListener(new ActionListener() {

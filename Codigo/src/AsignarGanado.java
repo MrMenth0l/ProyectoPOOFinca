@@ -133,7 +133,7 @@ public class AsignarGanado extends JFrame{
                     }
                 }
                 JOptionPane.showMessageDialog(AsignarGanado.this, "Cabeza: " + GanadoField.getSelectedItem() + "\nAgregado a seccion: " + SeccionesField.getSelectedItem());
-                //new SetupFinca(sistema,finca, csv);
+                new SetupFinca(sistema,finca, csv);
                 setVisible(false);
             }
         });

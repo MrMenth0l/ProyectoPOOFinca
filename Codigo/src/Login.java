@@ -106,7 +106,7 @@ public class Login extends JFrame {
                                         Usuario usuario_activo = sistema.getFincas().get(i).getUsuarios().get(j);
                                         JOptionPane.showMessageDialog(Login.this, "Bienvenido " + UsuarioField1.getText());
                                         dispose();
-                                        //new Overview(sistema, finca, csv);
+                                        new Overview(sistema, finca, csv);
                                         finca.setUsuario_activo(usuario_activo.getUser());
                                         return;
                                     } else {

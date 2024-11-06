@@ -8,14 +8,14 @@ import java.nio.file.Path;
 public class export_csv
 {
     public void exportSistema(TuFinca sistema) throws IOException {
-        if(!Files.exists(Path.of("src/sistema"))) {
-            Files.createDirectory(Path.of("src/sistema"));
+        if(!Files.exists(Path.of("sistema"))) {
+            Files.createDirectory(Path.of("sistema"));
         }
     }
 
     public void exportFinca(Finca finca) throws IOException {
-        if(!Files.exists(Path.of("src/sistema/finca-" + finca.getNombre_Finca()))) {
-            Files.createDirectory(Path.of("src/sistema/finca-" + finca.getNombre_Finca()));
+        if(!Files.exists(Path.of("sistema/finca-" + finca.getNombre_Finca()))) {
+            Files.createDirectory(Path.of("sistema/finca-" + finca.getNombre_Finca()));
             exportSetup(finca);
         }
     }
@@ -50,14 +50,14 @@ public class export_csv
             File Tareas = new File("Tareas.csv");
             exportData("Nombre, Descripcion, Fecha, Trabajador, ID_Num, Recordatorio",Tareas,finca);
 
-            if(!Files.exists(Path.of("src/sistema/finca-" + finca.getNombre_Finca()+"/Tareas"))) {
-                Files.createDirectory(Path.of("src/sistema/finca-" + finca.getNombre_Finca() + "/Tareas"));
+            if(!Files.exists(Path.of("sistema/finca-" + finca.getNombre_Finca()+"/Tareas"))) {
+                Files.createDirectory(Path.of("sistema/finca-" + finca.getNombre_Finca() + "/Tareas"));
             }
 
     }
 
     public void exportData(String datos, File file, Finca finca) throws IOException {
-        File Datos = new File("src/sistema/finca-"+finca.getNombre_Finca()+"/"+file);
+        File Datos = new File("sistema/finca-"+finca.getNombre_Finca()+"/"+file);
         FileWriter fw =  new FileWriter(Datos, true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw. write(datos);
@@ -69,7 +69,7 @@ public class export_csv
     }
 
     public void exportData(String datos, File file, Finca finca, boolean tarea) throws IOException {
-        File Datos = new File("src/sistema/finca-"+finca.getNombre_Finca()+"/Tareas/"+file);
+        File Datos = new File("sistema/finca-"+finca.getNombre_Finca()+"/Tareas/"+file);
         FileWriter fw =  new FileWriter(Datos, true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw. write(datos);
@@ -81,7 +81,7 @@ public class export_csv
     }
 
     public void setupTarea(File file, Finca finca) throws IOException {
-        if(!Files.exists(Path.of("src/sistema/finca-" + finca.getNombre_Finca()+"/Tareas/"+file))) {
+        if(!Files.exists(Path.of("sistema/finca-" + finca.getNombre_Finca()+"/Tareas/"+file))) {
                 exportData("Nombre, Descripcion, Fecha, Recordatorio, Realizada", file, finca, true);
             }
     }

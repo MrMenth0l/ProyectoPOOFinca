@@ -18,21 +18,22 @@ public class SetupFinanzas extends JFrame {
         gbc.weightx = 1;
         gbc.weighty = 1;
 
-        JButton generarBalanceGeneral = new JButton("Generar Balance General");
-        generarBalanceGeneral.setFont(new Font("Raleway", Font.BOLD, 24));
-
 
         JButton generarEstadoResultados = new JButton("Generar Estado de Resultados");
         generarEstadoResultados.setFont(new Font("Raleway", Font.BOLD, 24));
 
 
-        JButton revisarBalanceGeneral = new JButton("Revisar Balance General");
-        revisarBalanceGeneral.setFont(new Font("Raleway", Font.BOLD, 24));
-
 
         JButton revisarEstadoResultados = new JButton("Revisar Estado de Resultados");
         revisarEstadoResultados.setFont(new Font("Raleway", Font.BOLD, 24));
 
-
+        generarEstadoResultados.addActionListener(e -> {
+            new GenerarER(sistema,csv);
+            dispose();
+        });
+        revisarEstadoResultados.addActionListener(e -> {
+            new RevisarER(sistema,csv);
+            dispose();
+        });
     }
 }

@@ -129,7 +129,7 @@ public class AgregarSuministrador extends JFrame{
                 }
                 JOptionPane.showMessageDialog(AgregarSuministrador.this, "Suministrador: " + suministrador.getNombre() + "\nAgregado correctamente");
                 dispose();
-                //new SetupFinca(sistema,finca,csv);
+                new SetupFinca(sistema,finca,csv);
             }
         });
         Regresar.addActionListener(new ActionListener() {

@@ -138,7 +138,7 @@ public class AgregarTrabajador extends JFrame{
                }
                JOptionPane.showMessageDialog(AgregarTrabajador.this, "Trabajador: " + trabajador.getNombre() + "\nAgregado correctamente");
                dispose();
-               //new SetupFinca(sistema,finca,csv);
+               new SetupFinca(sistema,finca,csv);
 
 
            }});

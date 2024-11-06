@@ -70,7 +70,7 @@ public class Finca {
     public String getNombre_Finca() {return Nombre_Finca;}
 
     public String getFincaPath(){
-        return "src/sistema/finca-"+getNombre_Finca();
+        return "sistema/finca-"+getNombre_Finca();
     }
 
     public String getUsuario_activo(){return this.Usuario_activo;}

@@ -122,8 +122,8 @@ public class AgregarTarea extends JFrame {
 
                        File tareasFile = new File("Tareas-"+trabajador.getID_Num());
                        File file = new File("Tareas.csv");
-                       //String datosTrabajador = NombreField.getText() + ","+DescripcionField.getText()+","+dateOnly;
-                       //String datosTarea = datosTrabajador +","+trabajador.getNombre()+","+trabajador.getID_Num();
+                       String datosTrabajador = NombreField.getText() + ","+DescripcionField.getText()+",";
+                       String datosTarea = datosTrabajador +","+trabajador.getNombre()+","+trabajador.getID_Num();
                        List<String> Tarea= new ArrayList<>();
                        Tarea.add(NombreField.getText());
                        Tarea.add(DescripcionField.getText());
@@ -134,8 +134,8 @@ public class AgregarTarea extends JFrame {
                        //new Recordatorio(trabajador.getTelefono(), Tarea, 2);
                        try {
                            csv.setupTarea(tareasFile,finca);
-                           //csv.exportData(datosTrabajador,tareasFile,finca,true);
-                           //csv.exportData(datosTarea, file,finca);
+                           csv.exportData(datosTrabajador,tareasFile,finca,true);
+                           csv.exportData(datosTarea, file,finca);
 
                        } catch (IOException ex) {
                            throw new RuntimeException(ex);
